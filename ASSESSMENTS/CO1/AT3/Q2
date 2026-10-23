@@ -1,0 +1,41 @@
+
+states = input("Enter states: ").split()
+alphabet = input("Enter input alphabet: ").split()
+initial = input("Enter initial state: ")
+final = input("Enter final states: ").split()
+
+n = int(input("Enter number of transitions: "))
+transition = {}
+
+print("Enter transitions (state symbol next_state):")
+for i in range(n):
+    s, symbol, next_state = input().split()
+    transition[(s, symbol)] = next_state
+
+m = int(input("Enter number of input strings: "))
+
+for i in range(m):
+    string = input("Enter input string: ")
+    current = initial
+    path = [current]
+    valid = True
+
+    for symbol in string:
+        if symbol not in alphabet:
+            valid = False
+            break
+
+        if (current, symbol) not in transition:
+            valid = False
+            break
+
+        current = transition[(current, symbol)]
+        path.append(current)
+
+    print("\nInput String:", string)
+    print("Transition Path:", " -> ".join(path))
+
+    if valid and current in final:
+        print("Accepted")
+    else:
+        print("Rejected")
