@@ -1,0 +1,50 @@
+
+import re
+
+products = [
+    "Apple iPhone 15",
+    "Samsung Galaxy Phone",
+    "HP Laptop",
+    "Dell Laptop",
+    "Apple Watch",
+    "Wireless Headphones",
+    "Bluetooth Speaker",
+    "Phone Charger"
+]
+
+def search_products(keyword, search_type):
+    if search_type == "exact":
+        pattern = r"\b" + re.escape(keyword) + r"\b"
+    elif search_type == "prefix":
+        pattern = r"\b" + re.escape(keyword)
+    elif search_type == "suffix":
+        pattern = re.escape(keyword) + r"\b"
+    elif search_type == "partial":
+        pattern = re.escape(keyword)
+    else:
+        print("Invalid search type")
+        return
+
+    matches = [
+        product for product in products
+        if re.search(pattern, product, re.IGNORECASE)
+    ]
+
+    print("\nSearch Type:", search_type)
+    print("Keyword:", keyword)
+    print("Matching Products:")
+
+    if matches:
+        for product in matches:
+            print(product)
+    else:
+        print("No matching products found")
+
+    print("Total Matching Products:", len(matches))
+
+
+search_products("Phone", "exact")
+search_products("Lap", "prefix")
+search_products("phone", "suffix")
+search_products("tooth", "partial")
+search_products("APPLE", "partial")
