@@ -1,0 +1,46 @@
+
+import re
+
+reg_no = input("Enter Register Number: ")
+email = input("Enter Institutional Email: ")
+course = input("Enter Course Code: ")
+semester = input("Enter Semester (1-8): ")
+mobile = input("Enter Mobile Number: ")
+
+# Validation
+checks = {
+    "Register Number": (
+        reg_no, r"^\d{9}$"
+    ),
+    "Institutional Email": (
+        email, r"^[a-zA-Z0-9._%+-]+@university\.edu$"
+    ),
+    "Course Code": (
+        course, r"^[A-Z]{2,4}\d{3,4}$"
+    ),
+    "Semester": (
+        semester, r"^[1-8]$"
+    ),
+    "Mobile Number": (
+        mobile, r"^[6-9]\d{9}$"
+    )
+}
+
+all_valid = True
+
+print("\n--- Validation Results ---")
+
+for field, (value, pattern) in checks.items():
+    if re.fullmatch(pattern, value):
+        print(field, ": Valid")
+    else:
+        print(field, ": Invalid")
+        all_valid = False
+
+print("\n--- Registration Status Report ---")
+
+if all_valid:
+    print("Registration Successful")
+else:
+    print("Registration Failed")
+    print("Please correct the invalid fields.")
