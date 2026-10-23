@@ -1,0 +1,66 @@
+
+import re
+
+resumes = [
+    """Name: Rohit Venkat
+    Email: rohit@gmail.com
+    Mobile: 9876543210
+    Skills: Python, Java, SQL, Machine Learning
+    Experience: 3 years""",
+
+    """Name: Rahul Kumar
+    Email: rahul@gmail.com
+    Mobile: 9123456780
+    Skills: Java, SQL, NLP
+    Experience: 1 year""",
+
+    """Name: Priya Sharma
+    Email: priya@gmail.com
+    Mobile: 9988776655
+    Skills: Python, SQL, NLP
+    Experience: 2 years"""
+]
+
+skills_list = [
+    "Python", "Java", "SQL",
+    "Machine Learning", "NLP"
+]
+
+eligible_candidates = []
+
+for resume in resumes:
+    name = re.search(r"Name:\s*(.+)", resume)
+    email = re.search(
+        r"[\w.+-]+@[\w.-]+\.[a-zA-Z]{2,}", resume
+    )
+    mobile = re.search(r"Mobile:\s*(\d{10})", resume)
+    experience = re.search(
+        r"Experience:\s*(\d+)\s*years?", resume,
+        re.IGNORECASE
+    )
+
+    skills = []
+    for skill in skills_list:
+        if re.search(r"\b" + re.escape(skill) + r"\b",
+                     resume, re.IGNORECASE):
+            skills.append(skill)
+
+    years = int(experience.group(1)) if experience else 0
+
+    profile = {
+        "Name": name.group(1).strip() if name else "Not found",
+        "Email": email.group() if email else "Not found",
+        "Mobile": mobile.group(1) if mobile else "Not found",
+        "Skills": skills,
+        "Experience": years
+    }
+
+    print("\nCandidate Profile")
+    print(profile)
+
+    if years >= 2 and "Python" in skills:
+        eligible_candidates.append(profile)
+
+print("\nEligible Candidates")
+for candidate in eligible_candidates:
+    print(candidate["Name"])
