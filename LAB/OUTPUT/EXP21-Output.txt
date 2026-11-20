@@ -1,0 +1,5 @@
+Sentence: The smart student reads a book
+Noun phrases:
+  'The smart student': head='student', modifier='smart'
+  'a book': head='book', modifier='none'
+Semantic interpretation: a student performs the action of reading a book.

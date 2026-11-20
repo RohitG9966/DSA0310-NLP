@@ -1,0 +1,4 @@
+Sentence pair overlap: 1
+Sentence pair overlap: 1
+Coherence overlap score: 1.00
+Interpretation: RELATED

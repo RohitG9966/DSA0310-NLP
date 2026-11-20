@@ -1,0 +1,5 @@
+Named entities (offline demonstration):
+Apple                ORG
+Steve Jobs           PERSON
+California           GPE
+1976                 DATE

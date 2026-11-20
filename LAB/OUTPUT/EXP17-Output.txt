@@ -1,0 +1,4 @@
+WordNet-style meaning exploration for: bank
+bank.n.01 - financial institution that accepts deposits
+bank.n.02 - sloping land beside a body of water
+bank.v.01 - to deposit money in a bank

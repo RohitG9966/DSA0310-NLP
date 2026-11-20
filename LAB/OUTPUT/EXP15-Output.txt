@@ -1,0 +1,6 @@
+Sentence: the dog sees the dog
+Selected grammar rules:
+  S -> NP VP
+  NP -> Det N
+  VP -> V NP
+Parse probability = 0.5600

@@ -1,0 +1,4 @@
+Text: Ravi bought a laptop. He uses it every day.
+He -> Ravi
+it -> a laptop
+Resolved text: Ravi bought a laptop. Ravi uses the laptop every day.

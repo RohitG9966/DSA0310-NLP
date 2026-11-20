@@ -1,0 +1,4 @@
+Expression: FORALL x (Human(x) -> Mortal(x))
+Tokens: ['FORALL', 'x', '(', 'Human', '(', 'x', ')', '->', 'Mortal', '(', 'x', ')', ')']
+FOPC syntax: VALID
+Meaning: For every x, if x is human then x is mortal.

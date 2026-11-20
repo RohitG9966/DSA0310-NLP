@@ -1,0 +1,5 @@
+Query: python language
+Document ranking:
+D1: 4.197 | python is a popular programming language
+D2: 2.099 | natural language processing uses python
+D3: 0.000 | database systems store information

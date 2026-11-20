@@ -1,0 +1,5 @@
+Hello!                              -> GREETING
+Can you open the door?              -> REQUEST
+Where is the library?               -> QUESTION
+The class starts at ten.            -> STATEMENT
+Thank you.                          -> THANKING

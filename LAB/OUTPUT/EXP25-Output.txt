@@ -1,0 +1,3 @@
+Prompt: Write one sentence about natural language processing.
+Live GPT-3 call unavailable: OPENAI_API_KEY is not set
+Sample output: Natural language processing helps computers understand human language.

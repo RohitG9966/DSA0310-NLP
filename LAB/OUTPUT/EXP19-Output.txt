@@ -1,0 +1,4 @@
+Context words: ['cash', 'deposited', 'bank']
+bank_finance    overlap = 1
+bank_river      overlap = 0
+Selected sense: bank_finance
